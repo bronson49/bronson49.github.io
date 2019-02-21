@@ -25,7 +25,7 @@
     opacity: 0;
     animation: textTown 1s linear forwards;
     animation-delay: 3s;
-    background: url(../img/bgLogo.png) -34% 50% no-repeat;
+    background: url(../img/bgLogo.png) -44% 50% no-repeat;
     background-size: 58%;
 }
 @keyframes textTown {
