@@ -43,6 +43,7 @@
     text-transform: uppercase;
     color: #FFFFFF;
     opacity: 0;
+    text-shadow: 0 0 20px rgb(0,0,0);
 }
 .town-text .arch01 {
     animation: arckhitect01 2.5s ease;
@@ -116,7 +117,12 @@
         opacity: 1;
     }
 }
-
+.buttonRoom img {
+   background: rgba(105, 107, 123, 0.6) ;
+   box-shadow: 0 0 20px 17px rgba(105, 107, 123, 0.6);
+   border-radius: 10px;
+   padding: 10px;
+}
 .room{
     background: white;
     font-family: Roboto, sans-serif;
