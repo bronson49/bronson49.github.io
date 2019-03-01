@@ -43,9 +43,9 @@
     text-transform: uppercase;
     color: #FFFFFF;
     opacity: 0;
-    /*text-shadow: 0 0 20px rgb(0,0,0);*/
-    background: rgba(105, 107, 123, 0.55) ;
-    box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);
+    text-shadow: 0 0 10px rgb(0,0,0), 0 0 20px rgb(105, 107, 123), 0 0 30px rgb(105, 107, 123);
+    /*background: rgba(105, 107, 123, 0.55) ;*/
+    /*box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);*/
 }
 .town-text .arch01 {
     animation: arckhitect01 2.5s ease;
