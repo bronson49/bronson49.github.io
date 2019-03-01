@@ -3,8 +3,8 @@
 }
 .player_container{
     position : relative;
-    width: 970px;
-    height: 250px;
+    width: 728px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,9 +12,21 @@
     left : 50%;
     top:38%;
     transform: translate3d(-50%,-50%,0);
+
+    overflow: hidden;
 }
+.logoLeft{
+    height: 73px;
+    width: 123px;
+}
+.logoRight {
+    background: rgba(105, 107, 123, 0.55) ;
+    box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);
+    /*border-radius: 10px;*/
+    /*padding: 10px;*/
 
-
+    width: 200px;
+}
 .town-text{
     position: absolute;
     display: flex;
@@ -38,7 +50,7 @@
     right: 8%;
     width: min-content;
     font-family: Roboto, sans-serif;
-    font-size: 36px;
+    font-size: 26px;
     font-weight: lighter;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -119,12 +131,7 @@
         opacity: 1;
     }
 }
-.buttonRoom img {
-    background: rgba(105, 107, 123, 0.55) ;
-    box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);
-   /*border-radius: 10px;*/
-   /*padding: 10px;*/
-}
+
 .room{
     background: white;
     font-family: Roboto, sans-serif;
