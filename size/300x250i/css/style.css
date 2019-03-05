@@ -16,10 +16,21 @@
     overflow: hidden;
 }
 .logoLeft{
-    height: 55px;
-    width: 90px;
+    height: 204px;
+    width: 253px;
 
-    display: none;
+    opacity: 1;
+    position: absolute;
+    animation: logoLeft 1s linear forwards;
+    animation-delay: 5s;
+    background: url(../img/bgLogo.png) 68% 64% no-repeat;
+    background-size: 118%;
+    padding: 54px;
+}
+@keyframes logoLeft {
+    to{
+        opacity: 0;
+    }
 }
 .logoRight {
     background: rgba(105, 107, 123, 0.55) ;
@@ -64,7 +75,7 @@
 }
 .town-text .arch01 {
     animation: arckhitect01 2.5s ease;
-    animation-delay: 3s;
+    animation-delay: 5.5s;
 }
 @keyframes arckhitect01 {
     0%{
@@ -82,7 +93,7 @@
 }
 .town-text span.arch02 {
     animation: arckhitect02 2.5s ease ;
-    animation-delay: 5s;
+    animation-delay: 7.5s;
     /*right: 1%;*/
     /*width: 48%;*/
     text-align: center;
@@ -103,7 +114,7 @@
 }
 .town-text .arch03 {
     animation: arckhitect03 2.5s ease;
-    animation-delay: 7s;
+    animation-delay: 9.5s;
 }
 @keyframes arckhitect03 {
     0%{
@@ -126,7 +137,7 @@
     width: 60%;
     opacity: 0;
     animation: button1 1.2s forwards;
-    animation-delay: 9s;
+    animation-delay: 11.3s;
 
     flex-direction: column-reverse;
     height: 170px;
@@ -151,7 +162,7 @@
     opacity: 0;
     animation: roomAnim, roomPulse ;
     animation-duration: 1s, 2s;
-    animation-delay: 10.5s, 0s;
+    animation-delay: 12.5s, 0s;
     animation-fill-mode: forwards, none;
     animation-iteration-count: 1 , 13;
     animation-direction: normal, normal;
