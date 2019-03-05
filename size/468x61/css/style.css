@@ -25,7 +25,7 @@
     /*border-radius: 10px;*/
     /*padding: 10px;*/
 
-    width: 150px;
+    width: 120px;
 }
 .town-text{
     position: absolute;
@@ -135,7 +135,7 @@
 .room{
     background: white;
     font-family: Roboto, sans-serif;
-    width: 90px;
+    width: 115px;
     text-align: center;
     font-size: 12px;
     padding: 6px 0;
