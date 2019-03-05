@@ -16,8 +16,7 @@
     overflow: hidden;
 }
 .logoLeft{
-    height: 204px;
-    width: 253px;
+    width: 336px;
 
 
     opacity: 1;
@@ -26,7 +25,7 @@
     animation-delay: 5s;
     background: url(../img/bgLogo.png) 68% 64% no-repeat;
     background-size: 118%;
-    padding: 54px;
+    padding: 64px;
 }
 @keyframes logoLeft {
     to{
