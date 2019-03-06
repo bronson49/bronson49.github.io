@@ -18,6 +18,7 @@
 .logoLeft{
     height: 79px;
     width: 109px;
+    display: none;
 }
 .logoRight {
     background: rgba(105, 107, 123, 0.55) ;
@@ -39,8 +40,8 @@
     opacity: 0;
     animation: textTown 1s linear forwards;
     animation-delay: 3s;
-    background: url(../img/bgLogo.png) 52% -9% no-repeat;
-    background-size: 207%;
+    /*background: url(../img/bgLogo.png) 52% -9% no-repeat;*/
+    /*background-size: 207%;*/
 }
 @keyframes textTown {
     to{
@@ -50,7 +51,7 @@
 .town-text span{
     position: absolute;
     width: 90%;
-    bottom: 105px;
+    bottom: 43%;
     right: 5%;
     font-family: Roboto, sans-serif;
     font-size: 15px;
@@ -86,7 +87,7 @@
     animation-delay: 5s;
     text-align: center;
     right: 8%;
-    bottom: 90px;
+    bottom: 41%;
 }
 @keyframes arckhitect02 {
     0%{
