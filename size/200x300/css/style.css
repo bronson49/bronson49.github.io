@@ -16,16 +16,14 @@
     overflow: hidden;
 }
 .logoLeft{
-    width: 336px;
-
-
+    width: 447px;
     opacity: 1;
     position: absolute;
     animation: logoLeft 1s linear forwards;
     animation-delay: 5s;
     background: url(../img/bgLogo.png) 68% 64% no-repeat;
-    background-size: 118%;
-    padding: 64px;
+    background-size: 134%;
+    padding: 133px;
 }
 @keyframes logoLeft {
     to{
