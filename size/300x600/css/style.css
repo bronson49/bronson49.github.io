@@ -39,8 +39,8 @@
     opacity: 0;
     animation: textTown 1s linear forwards;
     animation-delay: 3s;
-    background: url(../img/bgLogo.png) 60% -39% no-repeat;
-    background-size: 142%;
+    background: url(../img/bgLogo.png) 45% -173% no-repeat;
+    background-size: 193%;
 }
 @keyframes textTown {
     to{
@@ -53,7 +53,7 @@
     bottom: 100px;
     right: 5%;
     font-family: Roboto, sans-serif;
-    font-size: 26px;
+    font-size: 31px;
     font-weight: lighter;
     text-transform: uppercase;
     color: #FFFFFF;
