@@ -55,7 +55,7 @@
     text-transform: uppercase;
     color: #FFFFFF;
     opacity: 0;
-    text-shadow: 0 0 10px rgb(0,0,0), 0 0 20px rgb(105, 107, 123), 0 0 30px rgb(105, 107, 123);
+    text-shadow: 0 0 10px rgb(0,0,0), 0 0 20px rgb(105, 107, 123),0 0 15px rgb(0,0,0), 0 0 20px rgb(105, 107, 123), 0 0 30px rgb(105, 107, 123);
     /*background: rgba(105, 107, 123, 0.55) ;*/
     /*box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);*/
 }
@@ -78,8 +78,8 @@
     }
 }
 .town-text span.arch02 {
-    animation: arckhitect02 2.5s ease ;
-    animation-delay: 5s;
+    animation: arckhitect02 3s ease ;
+    animation-delay: 5.5s;
     right: 1%;
     width: 48%;
     text-align: center;
@@ -99,8 +99,8 @@
     }
 }
 .town-text .arch03 {
-    animation: arckhitect03 2.5s ease;
-    animation-delay: 7s;
+    animation: arckhitect03 3s ease;
+    animation-delay: 7.5s;
     width: max-content;
 }
 @keyframes arckhitect03 {
@@ -124,7 +124,7 @@
     width: 60%;
     opacity: 0;
     animation: button1 1.2s forwards;
-    animation-delay: 9s;
+    animation-delay: 9.5s;
 }
 @keyframes button1 {
     to {
@@ -146,7 +146,7 @@
     opacity: 0;
     animation: roomAnim, roomPulse ;
     animation-duration: 1s, 2s;
-    animation-delay: 10.5s, 0s;
+    animation-delay: 11s, 0s;
     animation-fill-mode: forwards, none;
     animation-iteration-count: 1 , 13;
     animation-direction: normal, normal;

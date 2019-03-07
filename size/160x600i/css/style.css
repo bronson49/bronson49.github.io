@@ -39,7 +39,7 @@
     opacity: 0;
     animation: textTown 1s linear forwards;
     animation-delay: 3s;
-    background: url(../img/bgLogo.png) 65% -11% no-repeat;
+    background: url(../img/bgLogo.png) 45% -17% no-repeat;
     background-size: 193%;
 }
 @keyframes textTown {
@@ -59,7 +59,7 @@
     color: #FFFFFF;
     opacity: 0;
     text-align: center;
-    text-shadow: 0 0 10px rgb(0,0,0), 0 0 20px rgb(105, 107, 123), 0 0 30px rgb(105, 107, 123);
+    text-shadow: 0 0 10px rgb(0,0,0), 0 0 10px rgb(105, 107, 123),0 0 10px rgb(105, 107, 123);
     /*background: rgba(105, 107, 123, 0.55) ;*/
     /*box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);*/
 }
@@ -82,11 +82,12 @@
     }
 }
 .town-text span.arch02 {
-    animation: arckhitect02 2.5s ease ;
+    animation: arckhitect02 2.5s ease;
     animation-delay: 5s;
     text-align: center;
-    right: 8%;
+    right: 0;
     bottom: 41%;
+    width: 100%;
 }
 @keyframes arckhitect02 {
     0%{
