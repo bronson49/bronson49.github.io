@@ -16,8 +16,7 @@
     overflow: hidden;
 }
 .logoLeft{
-    height: 55px;
-    width: 106px;
+    width: 152px;
 }
 .logoRight {
     background: rgba(105, 107, 123, 0.55) ;
@@ -37,7 +36,7 @@
     opacity: 0;
     animation: textTown 1s linear forwards;
     animation-delay: 3s;
-    background: url(../img/bgLogo.png) -44% 50% no-repeat;
+    background: url(../img/bgLogo.png) -37% 50% no-repeat;
     background-size: 56%;
 }
 @keyframes textTown {
