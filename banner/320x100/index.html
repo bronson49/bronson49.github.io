@@ -108,7 +108,7 @@
             color: #989898;
             font-size: 14px;
             line-height: 1.5;
-            font-weight: 300;
+            font-weight: 400;
         }
         .banner__text-content.visible {
             opacity: 1;
@@ -225,6 +225,12 @@
             align-items: center;
             border-radius: 30px;
         }
+        .banner__button img {
+            position: absolute;
+            right: 5px;
+            width: 92px;
+        }
+
     </style>
 </head>
 <body>
@@ -332,6 +338,7 @@
     </div>
     <div class="banner__button">
         <a href="#"><span>Обрати квартиру</span></a>
+        <img src="img/intBud.png" alt="integral bud">
     </div>
 </div>
 
@@ -415,7 +422,7 @@
                 }
 
                 svg[0].classList.add('visible');
-                text[0].classList.add('visible');
+               // text[0].classList.add('visible');
                 clearInterval(int);
                 setTimeout(function () {
                     buttonWrapper.classList.add('isVisible');
