@@ -49,9 +49,7 @@
 }
 .town-text span{
     position: absolute;
-    width: 90%;
     bottom: 43%;
-    right: 5%;
     font-family: Roboto, sans-serif;
     font-size: 15px;
     font-weight: lighter;
@@ -85,7 +83,6 @@
     animation: arckhitect02 2.5s ease ;
     animation-delay: 5s;
     text-align: center;
-    right: 8%;
     bottom: 41%;
 }
 @keyframes arckhitect02 {
