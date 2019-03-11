@@ -60,7 +60,7 @@
     /*box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);*/
 }
 .town-text .arch01 {
-    animation: arckhitect01 2.5s ease;
+    animation: arckhitect01 3s ease;
     animation-delay: 3s;
 }
 @keyframes arckhitect01 {
