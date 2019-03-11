@@ -72,7 +72,7 @@
 }
 .town-text .arch01 {
     animation: arckhitect01 2.5s ease;
-    animation-delay: 5.5s;
+    animation-delay: 3s;
 }
 @keyframes arckhitect01 {
     0%{
@@ -90,7 +90,7 @@
 }
 .town-text span.arch02 {
     animation: arckhitect02 2.5s ease ;
-    animation-delay: 7.5s;
+    animation-delay: 5s;
     /*right: 1%;*/
     /*width: 48%;*/
     text-align: center;
@@ -111,7 +111,7 @@
 }
 .town-text .arch03 {
     animation: arckhitect03 2.5s ease;
-    animation-delay: 9.5s;
+    animation-delay: 7s;
 }
 @keyframes arckhitect03 {
     0%{
@@ -135,7 +135,7 @@
     width: 60%;
     opacity: 0;
     animation: button1 1.2s forwards;
-    animation-delay: 11s;
+    animation-delay: 9s;
 
     height: 190px;
 }
@@ -159,7 +159,7 @@
     opacity: 0;
     animation: roomAnim, roomPulse ;
     animation-duration: 1s, 2s;
-    animation-delay: 12.5s, 0s;
+    animation-delay: 11s, 0s;
     animation-fill-mode: forwards, none;
     animation-iteration-count: 1 , 13;
     animation-direction: normal, normal;

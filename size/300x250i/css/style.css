@@ -16,20 +16,18 @@
     overflow: hidden;
 }
 .logoLeft{
-    width: 447px;
+    width:196px;
     opacity: 1;
-    position: absolute;
-    animation: logoLeft 1s linear forwards;
+    /*animation: logoLeft 1s linear forwards;*/
     animation-delay: 5s;
-    background: url(../img/bgLogo.png) 68% 64% no-repeat;
-    background-size: 134%;
-    padding: 133px;
+    /*background: url(../img/bgLogo.png) 68% 64% no-repeat;*/
+    /*background-size: 134%;*/
 }
-@keyframes logoLeft {
-    to{
-        opacity: 0;
-    }
-}
+/*@keyframes logoLeft {*/
+    /*to{*/
+        /*opacity: 0;*/
+    /*}*/
+/*}*/
 .logoRight {
     background: rgba(105, 107, 123, 0.55) ;
     box-shadow: 0 0 30px 10px rgba(105, 107, 123, 0.7);
@@ -41,6 +39,7 @@
 .town-text{
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -48,8 +47,8 @@
     opacity: 0;
     animation: textTown 1s linear forwards;
     animation-delay: 3s;
-    /*background: url(../img/bgLogo.png) -38% 50% no-repeat;*/
-    /*background-size: 56%;*/
+    background: url(../img/bgLogo.png) 33% 228% no-repeat;
+    background-size: 153%;
 }
 @keyframes textTown {
     to{
@@ -61,7 +60,7 @@
     /*right: 8%;*/
     width: 99%;
     font-family: Roboto, sans-serif;
-    font-size: 23px;
+    font-size: 24px;
     font-weight: lighter;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -73,7 +72,7 @@
 }
 .town-text .arch01 {
     animation: arckhitect01 2.5s ease;
-    animation-delay: 5.5s;
+    animation-delay: 3s;
 }
 @keyframes arckhitect01 {
     0%{
@@ -91,7 +90,7 @@
 }
 .town-text span.arch02 {
     animation: arckhitect02 2.5s ease ;
-    animation-delay: 7.5s;
+    animation-delay: 5s;
     /*right: 1%;*/
     /*width: 48%;*/
     text-align: center;
@@ -112,7 +111,7 @@
 }
 .town-text .arch03 {
     animation: arckhitect03 2.5s ease;
-    animation-delay: 9.5s;
+    animation-delay: 7s;
 }
 @keyframes arckhitect03 {
     0%{
@@ -131,14 +130,14 @@
 .buttonRoom{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     width: 60%;
     opacity: 0;
     animation: button1 1.2s forwards;
-    animation-delay: 11.3s;
+    animation-delay: 9s;
 
-    flex-direction: column-reverse;
-    height: 170px;
+    height: 166px;
 }
 @keyframes button1 {
     to {
@@ -160,7 +159,7 @@
     opacity: 0;
     animation: roomAnim, roomPulse ;
     animation-duration: 1s, 2s;
-    animation-delay: 12.5s, 0s;
+    animation-delay: 11s, 0s;
     animation-fill-mode: forwards, none;
     animation-iteration-count: 1 , 13;
     animation-direction: normal, normal;
