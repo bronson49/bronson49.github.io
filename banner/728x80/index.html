@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="ad.size" content="width=728,height=80">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <title>Banner</title>
+    <style>
+        @keyframes roomAnim {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes roomPulse {
+            0%{
+                box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1), 0 0 0 5px rgba(255, 255, 255, 0);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.6), 0 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            99% {
+                box-shadow: 0 0 0 8px rgba(255, 255, 255, 0), 0 0 0 18px rgba(255, 255, 255, 0);
+            }
+            100%{
+                box-shadow: 0 0 0 0px rgba(255, 255, 255, 0), 0 0 0 5px rgba(255, 255, 255, 0);
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .banner {
+            width: 728px;
+            height: 80px;
+            position: relative;
+            border: 2px solid #999;
+        }
+        .banner__svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0;
+            transition: 1s ease-in-out;
+        }
+        .banner__svg.visible {
+            opacity: 1;
+        }
+        .banner__svg svg {
+            width: 100%;
+            height: 100%;
+        }
+        .banner__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .banner__error {
+            color: #585858;
+            font-size: 28px;
+            background: #fff;
+            z-index: 5;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .banner__logo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20px;
+        }
+        .banner__logo img {
+            width: 100%;
+        }
+        .banner__text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            max-width: 240px;
+            text-align: center;
+        }
+        .banner__text-content {
+            opacity: 0;
+            transition: 1s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #989898;
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 300;
+        }
+        .banner__text-content.visible {
+            opacity: 1;
+        }
+        .banner__error.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .banner__image {
+            opacity: .2;
+        }
+        .banner__image.visible {
+            opacity: 1;
+        }
+
+        #path1 {
+            transform: scale(0.3) translate3d(128%,-33%,0);
+            transition: 2s 0.01s ease;
+        }
+        #path2 {
+            transform: scale(0.4) translate3d(88%,-85%,0);
+            transition: 2s 0.02s ease;
+        }
+        #path3 {
+            transform: scale(0.5) translate3d(63%,-117%,0);
+            transition: 2s 0.03s ease;
+        }
+        #path4 {
+            transform: scale(0.6) translate3d(46%,-115%,0);
+            transition: 2s 0.04s ease;
+        }
+        #path5 {
+            transform: scale(0.7) translate3d(33%,-140%,0);
+            transition: 2s 0.05s ease;
+        }
+
+
+        .banner__svg.right #path1 {
+            transform: scale(0.3) translate3d(128%,-33%,0);
+        }
+        .banner__svg.right #path2 {
+            transform: scale(0.4) translate3d(83%,-85%,0);
+        }
+        .banner__svg.right #path3 {
+            transform: scale(0.5) translate3d(57%,-117%,0);
+        }
+        .banner__svg.right #path4 {
+            transform: scale(0.6) translate3d(39%,-115%,0);
+        }
+        .banner__svg.right #path5 {
+            transform: scale(0.7) translate3d(28%,-140%,0);
+        }
+
+
+        .banner__svg.left #path1 {
+            transform: scale(0.3) translate3d(128%,-33%,0);
+        }
+        .banner__svg.left #path2 {
+            transform: scale(0.4) translate3d(92%,-85%,0);
+        }
+        .banner__svg.left #path3 {
+            transform: scale(0.5) translate3d(70%,-117%,0);
+        }
+        .banner__svg.left #path4 {
+            transform: scale(0.6) translate3d(51%,-115%,0);
+        }
+        .banner__svg.left #path5 {
+            transform: scale(0.7) translate3d(41%,-140%,0);
+        }
+        .banner__button {
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: .5s ease;
+            visibility: hidden;
+        }
+        .banner__button.isVisible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .banner__button a {
+            background: white;
+            font-family: Roboto, sans-serif;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #6B6D7D;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.6), 0 0 0 20px rgba(255, 255, 255, 0.3);
+            opacity: 1;
+            animation: roomAnim, roomPulse ;
+            animation-duration: 1s, 2s;
+            animation-delay: 6s, 0s;
+            animation-fill-mode: forwards, none;
+            animation-iteration-count: 1 , infinite;
+            animation-direction: normal, normal;
+            animation-timing-function: ease, ease-in;
+        }
+        .banner__button a span {
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+            width: 165px;
+            padding: 8px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner ">
+        <div class="banner__error">
+            <p>Используйте актуальную версию браузера</p>
+        </div>
+        <div class="banner__svg visible">
+            <svg  xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <g>
+                    <clipPath id="hexagonal-mask1">
+                        <path id="path1" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask2">
+                        <path id="path2" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask3">
+                        <path id="path3" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask4">
+                        <path id="path4"  class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask5">
+                        <path id="path5"  class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                </g>
+                <image clip-path="url(#hexagonal-mask1)" class="banner__image visible"  height="100%"  width="100%" xlink:href="img/bg.jpg" />
+                <image clip-path="url(#hexagonal-mask2)" class="banner__image"   height="100%" width="100%" xlink:href="img/bg.jpg" />
+                <image clip-path="url(#hexagonal-mask3)" class="banner__image"  height="100%"  width="100%" xlink:href="img/bg.jpg" />
+                <image clip-path="url(#hexagonal-mask4)" class="banner__image"  height="100%"  width="100%" xlink:href="img/bg.jpg" />
+                <image clip-path="url(#hexagonal-mask5)" class="banner__image"  height="100%" width="100%" xlink:href="img/bg.jpg" />
+
+            </svg>
+        </div>
+        <div class="banner__svg">
+            <svg  xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <g>
+                    <clipPath id="hexagonal-mask1">
+                        <path id="path1" width="280" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask2">
+                        <path id="path2" width="327" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask3">
+                        <path id="path3" width="374" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask4">
+                        <path id="path4" width="421" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask5">
+                        <path id="path5" width="514" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                </g>
+                <image clip-path="url(#hexagonal-mask1)" class="banner__image visible" height="100%" width="100%" xlink:href="img/bg2.jpg" />
+                <image clip-path="url(#hexagonal-mask2)" class="banner__image" height="100%" width="100%" xlink:href="img/bg2.jpg" />
+                <image clip-path="url(#hexagonal-mask3)" class="banner__image" height="100%" width="100%" xlink:href="img/bg2.jpg" />
+                <image clip-path="url(#hexagonal-mask4)" class="banner__image" height="100%" width="100%" xlink:href="img/bg2.jpg" />
+                <image clip-path="url(#hexagonal-mask5)" class="banner__image" height="100%" width="100%" xlink:href="img/bg2.jpg" />
+
+            </svg>
+        </div>
+        <div class="banner__svg">
+            <svg  xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <g>
+                    <clipPath id="hexagonal-mask1">
+                        <path id="path1" width="280" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask2">
+                        <path id="path2" width="327" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask3">
+                        <path id="path3" width="374" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask4">
+                        <path id="path4" width="421" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                    <clipPath id="hexagonal-mask5">
+                        <path id="path5" width="514" class="banner__path" d="M110.818 52.1157C155.418 20.3157 209.318 5.71572 237.518 2.81572C259.018 -1.28428 335.618 -6.98428 405.918 34.9157C425.318 46.5157 456.618 69.8157 465.418 108.516C481.318 178.116 421.218 260.516 395.818 289.616C385.318 301.716 361.218 329.216 337.518 339.316C249.218 377.016 155.918 353.716 96.3178 346.416C79.6178 344.316 26.2178 330.716 12.8178 308.916C-23.2822 250.516 19.2178 117.516 110.818 52.1157Z"/>
+                    </clipPath>
+                </g>
+                <image clip-path="url(#hexagonal-mask1)" class="banner__image visible" height="100%" width="100%" xlink:href="img/bg3.jpg" />
+                <image clip-path="url(#hexagonal-mask2)" class="banner__image" height="100%" width="100%" xlink:href="img/bg3.jpg" />
+                <image clip-path="url(#hexagonal-mask3)" class="banner__image" height="100%" width="100%" xlink:href="img/bg3.jpg" />
+                <image clip-path="url(#hexagonal-mask4)" class="banner__image" height="100%" width="100%" xlink:href="img/bg3.jpg" />
+                <image clip-path="url(#hexagonal-mask5)" class="banner__image" height="100%" width="100%" xlink:href="img/bg3.jpg" />
+
+            </svg>
+        </div>
+        <div class="banner__content">
+            <div class="banner__logo">
+                <img src="img/logo.svg" alt="logo">
+            </div>
+            <div class="banner__text">
+                <div class="banner__text-content visible">
+                    Унікальна архітектура
+                </div>
+                <div class="banner__text-content">
+                    Краєвиди на «Батьківщину - Мати»
+                </div>
+                <div class="banner__text-content">
+                    Центр міста
+                </div>
+            </div>
+        </div>
+        <div class="banner__button">
+            <a href="#"><span>Обрати квартиру</span></a>
+        </div>
+    </div>
+
+
+
+    <script>
+        function banner() {
+            let int;
+
+            if (/*@cc_on!@*/false || !!document.documentMode) {
+                console.error('Этот браузер не подходит для отображения данного элемента')
+                let selector = document.querySelector('.banner__error');
+                let banners = document.querySelectorAll('.banner__svg');
+                selector.classList.add('visible');
+                for (let i = 0; i < banners.length; i++) {
+                    let banner = banners[i];
+                    banner.classList.remove('visible');
+                }
+                return false;
+            }
+
+
+            let state = {
+                count: 0,
+                maxCount: document.querySelectorAll('.banner__svg').length - 1,
+                delay: 4000
+            };
+            let steps = generateSteps();
+
+            function generateSteps () {
+                let result = [];
+                for (let i = 0; i < state.maxCount + 1; i++) {
+                    let step = {
+                        step: i,
+                        position: i % 2 ? 'left' : 'right'
+                    };
+                    result.push(step);
+                }
+                return result;
+            }
+
+            function init () {
+                state.count++;
+                toggle();
+                int = setInterval(nextStep.bind(this), state.delay); //Старт интервала
+            }
+            setTimeout(function () {
+                init();
+            }, state.delay / 2);
+
+
+            function toggle() {
+                let svg = document.querySelectorAll('.banner__svg');
+                let text = document.querySelectorAll('.banner__text-content');
+
+                for (let i = 0; i < svg.length; i++) {
+                    let element = svg[i];
+                    element.classList.remove('left');
+                    element.classList.remove('right');
+                    element.classList.add(steps[state.count - 1].position);
+                    element.classList.remove('visible');
+                    text[i].classList.remove('visible');
+                }
+                svg[state.count].classList.add('visible');
+                text[state.count].classList.add('visible')
+            }
+
+
+            function nextStep() {
+                if(state.count >= state.maxCount) {
+                    state.count = 0;
+                    let svg = document.querySelectorAll('.banner__svg');
+                    let text = document.querySelectorAll('.banner__text-content');
+                    let buttonWrapper = document.querySelector('.banner__button');
+                    for (let i = 0; i < svg.length; i++) {
+                        let element = svg[i];
+                        element.classList.remove('left');
+                        element.classList.remove('right');
+                        element.classList.remove('visible');
+                        text[i].classList.remove('visible');
+                    }
+
+                    svg[0].classList.add('visible');
+                    text[0].classList.add('visible');
+                    clearInterval(int);
+                    setTimeout(function () {
+                        buttonWrapper.classList.add('isVisible');
+
+                    }, state.delay / 2);
+                    return false;
+                }
+                state.count++;
+                toggle();
+
+            }
+        }
+        banner();
+
+
+    </script>
+</body>
+</html>
