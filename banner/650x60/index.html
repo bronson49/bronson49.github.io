@@ -95,14 +95,14 @@
             top: 0;
             height: 100%;
             width: 100%;
-            max-width: 95px;
+            max-width: 130px;
             display: flex;
             justify-content: center;
             align-items: center;
             padding-left: 20px;
         }
         .banner__logo img {
-            width: 100%;
+            width: 145px;
         }
         .banner__text {
             position: absolute;
@@ -127,7 +127,7 @@
             color: #989898;
             font-size: 14px;
             line-height: 1.2;
-            font-weight: 300;
+            font-weight: 400;
         }
         .banner__text-content.visible {
             opacity: 1;
@@ -240,6 +240,13 @@
             align-items: center;
             border-radius: 30px;
         }
+        .banner__button img {
+            position: absolute;
+            width: 140px;
+            right: 5px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -331,7 +338,7 @@
         </div>
         <div class="banner__content">
             <div class="banner__logo">
-                <img src="img/logo.svg" alt="logo">
+                <img src="img/logo.png" alt="logo">
             </div>
             <div class="banner__text">
                 <div class="banner__text-content visible">
@@ -347,6 +354,7 @@
         </div>
         <div class="banner__button">
             <a href="#"><span>Обрати квартиру</span></a>
+            <img src="img/intBud.png" alt="integral bud">
         </div>
     </div>
 
@@ -430,7 +438,7 @@
                     }
 
                     svg[0].classList.add('visible');
-                    text[0].classList.add('visible');
+                  //  text[0].classList.add('visible');
                     clearInterval(int);
                     setTimeout(function () {
                         buttonWrapper.classList.add('isVisible');
