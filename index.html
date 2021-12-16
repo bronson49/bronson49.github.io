@@ -303,6 +303,17 @@
             bottom: 50px;
             right: 10%;
         }
+        .flipper{
+            position: relative;
+        }
+        .santa-hat{
+            position: absolute;
+            right: -58px;
+            top: -60px;
+            width: 160px;
+            z-index: 31;
+            transform: rotate(10deg);
+        }
         @media (max-width: 750px) {
             h1{
                 font-size: 1rem;
@@ -320,7 +331,9 @@
     <h1 class="text-light">До начала новой жизни осталось:</h1>
 
     <div class="flipper" data-reverse="true" data-datetime="2022-01-14 00:18:00" data-template="dd|HH|ii|ss"
-         data-labels="Дней|Часов|Минут|Секунд" id="myFlipper"></div>
+         data-labels="Дней|Часов|Минут|Секунд" id="myFlipper">
+        <img src="./hat.png" class="santa-hat" alt="">
+    </div>
 
 </div>
 <img class="bg-corgi" alt="" src="./corgi.png"/>
