@@ -228,10 +228,32 @@
     </div>
 </footer>
 
+<div class="popup" id="popup" style="display:none;">
+    <div class="popup-content">
+        <div class="title">Залиште заявку</div>
+        <span class="close"></span>
+        <form class="callback_form" id="callback_form">
+            <label>
+                <span>Ваше ім'я</span>
+                <input type="text" name="name" id="name" required>
+            </label>
+            <label>
+                <span>Телефон</span>
+                <input type="text" name="phone" id="phone" inputmode="tel" required  minlength="18">
+            </label>
+
+            <button type="submit">Зв'язатися</button>
+        </form>
+
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script type="text/javascript" src="./slick.min.js"></script>
 <script type="text/javascript" src="./parallax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"></script>
 <script src="./script.js"></script>
 <script>
     AOS.init({once: true, offset:200});
