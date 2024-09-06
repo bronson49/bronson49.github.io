@@ -121,7 +121,33 @@ function bannerAnimations(){
             wrapper: '#start',
         }).start()
     }, random(2000, 5000))
+}
 
+
+const bubblesContainer = document.getElementById("start");
+
+function createBubble() {
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+
+    bubble.style.left = random(5, 95) + '%';
+
+    const size = Math.floor(random(20, 40));
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+
+    const animationDuration = Math.floor(random(10, 25));
+    bubble.style.animationDuration = `${animationDuration}s`;
+
+    bubblesContainer.appendChild(bubble);
+
+    setTimeout(()=>{
+        $(bubble).remove();
+    }, animationDuration*1000)
+    /*bubble.addEventListener("animationend", () => {
+        console.log('animationend')
+        bubble.remove();
+    });*/
 }
 
 $(document).ready(function(){
@@ -130,5 +156,6 @@ $(document).ready(function(){
     createParallax();
     openCallbackForm();
     formValidation();
-    bannerAnimations();
+   // bannerAnimations();
+    setInterval(createBubble, random(500, 1500));
 });
