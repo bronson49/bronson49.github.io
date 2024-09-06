@@ -87,7 +87,7 @@ header .logo{
     background: transparent;
     border-radius: 0 0 12px 12px;
     margin-right: auto;
-    padding: 16px 20px 16px 0;
+    padding: 16px 0 ;
     transition:background-color .3s;
 }
 header .logo .menu_link{
@@ -105,7 +105,8 @@ header a{
     color: white;
 }
 header.filled .logo{
-    background: var(--blue)
+    background: var(--blue);
+    padding: 16px 20px ;
 }
 header.filled{
     background: #fff;
@@ -285,13 +286,14 @@ section {
     width: 500px;
 }
 .about_carousel img{
-    height: 400px;
-    border-radius: 12px;
+    width: 100%;
     margin: 0 auto;
 }
 .about_carousel .slick-slide{
     text-align: center;
     overflow: hidden;
+    height: 400px;
+    border-radius: 12px;
 }
 .about_carousel .slick-prev:before, .about_carousel .slick-next:before{
     color: var(--gray);
@@ -358,7 +360,7 @@ section {
 }
 .product_item .btn{
     color: white;
-    background-color: var(--orange);
+    background-color: var(--blue);
     padding: 16px 20px;
     cursor: pointer;
     text-align: center;
@@ -368,7 +370,7 @@ section {
     transition: background-color .3s;
 }
 .product_item .btn:hover{
-    background-color: #f05118;
+    background-color: #2573db;
 }
 
 
@@ -487,6 +489,7 @@ section {
 /* HEALTHY */
 .healthy{
     overflow: hidden;
+    margin-top: 40px;
 }
 .healthy_wrapper{
     display: flex;
@@ -531,7 +534,7 @@ section {
 /* FOOTER */
 
 footer{
-    background: #0a0a0c;
+    background: #06336e;
     color: white;
     padding: 64px 0;
 }
@@ -550,7 +553,7 @@ footer{
     margin: 16px 0;
 }
 .footer_container .col a:hover{
-    color: var(--blue);
+    color: white;
 }
 .footer_container .col b{
     font-size: 20px;
@@ -673,6 +676,7 @@ footer{
     overflow: hidden;
 }
 .contacts_wrapper{
+    margin-top: 40px;
     display: flex;
     align-items: center;
     height: 500px;
