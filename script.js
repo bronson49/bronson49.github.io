@@ -7,9 +7,9 @@ function setHeaderColor(){
 
     window.document.addEventListener('scroll', function (){
         if($header.offset().top + $header.height() > aboutTop){
-            $header.css('background-color', '#fff');
+            $header.addClass('filled');
         } else {
-            $header.css('background-color', '#ecf0f7');
+            $header.removeClass('filled');
         }
     }, {passive:true})
 }
@@ -123,10 +123,8 @@ function bannerAnimations(){
     }, random(2000, 5000))
 }
 
-
-const bubblesContainer = document.getElementById("start");
-
 function createBubble() {
+    const bubblesContainer = document.getElementById("start");
     const bubble = document.createElement("div");
     bubble.className = "bubble";
 
@@ -157,5 +155,5 @@ $(document).ready(function(){
     openCallbackForm();
     formValidation();
    // bannerAnimations();
-    setInterval(createBubble, random(500, 1500));
+   // setInterval(createBubble, random(500, 1500));
 });

@@ -67,7 +67,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 10;
-    background: #ecf0f7;
+    background: transparent;
     transition:background-color .3s;
 }
 header .container{
@@ -98,9 +98,16 @@ header a{
     font-size: 18px;
     cursor: pointer;
     transition: color .3s;
+    color: white;
+}
+header.filled{
+    background: #fff;
+}
+header.filled a{
+    color: #0a0a0c;
 }
 header a:hover{
-    color: var(--blue);
+    color: var(--orange);
 }
 
 section {
@@ -129,8 +136,8 @@ section {
     position: relative;
     display: flex;
     align-items: center;
-    height: 90vh;
-    background: #ecf0f7;
+    height: 95vh;
+    background: #000;
     margin: 0;
     overflow: hidden;
 }
@@ -168,7 +175,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    color: white;
 }
 .banner h1{
     font-size: 40px;
@@ -178,11 +185,21 @@ section {
     color: var(--orange);
 }
 .banner h2{
-    color: var(--gray);
+    color: white;
     font-size: 20px;
     font-weight: 400;
     margin-top: 16px;
 }
+.banner_video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: .4;
+}
+/*
 .ico{
     position: absolute;
     width: 26px;
@@ -226,6 +243,7 @@ section {
         opacity: 0;
     }
 }
+*/
 
 /* ABOUT */
 
@@ -546,4 +564,37 @@ footer{
 }
 .callback_form button:hover{
     background-color: #f05118;
+}
+
+
+
+
+
+
+/* CONTACTS */
+
+.contacts_wrapper{
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+.contacts_text{
+    width: 40%;
+}
+.contacts_text .title{
+    font-size: 28px;
+    margin: 20px 0 8px;
+}
+.contacts_text .desc{
+    font-size: 16px;
+    line-height: 26px;
+}
+.contacts_text .desc a:hover{
+    color: var(--blue);
+}
+.contacts_map{
+    width: 60%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
 }
