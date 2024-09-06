@@ -84,10 +84,11 @@ header .container .line{
     background: linear-gradient(90deg, rgba(255,255,255,0) 38%, rgba(12,98,213,1) 78%);
 }
 header .logo{
-    background: var(--blue);
+    background: transparent;
     border-radius: 0 0 12px 12px;
     margin-right: auto;
     padding: 16px 20px;
+    transition:background-color .3s;
 }
 header .logo img{
     width: 200px;
@@ -99,6 +100,9 @@ header a{
     cursor: pointer;
     transition: color .3s;
     color: white;
+}
+header.filled .logo{
+    background: var(--blue)
 }
 header.filled{
     background: #fff;
@@ -150,11 +154,11 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    width: 50%;
+    width: 40%;
 }
 .banner .container .image img{
-    width: 350px;
-    transform: translateX(50px) rotate(10deg);
+    width: 500px;
+    transform: rotate(10deg);
 }
 .banner .container .image .btn{
     color: white;
@@ -171,18 +175,18 @@ section {
     background-color: #f05118;
 }
 .banner .container .text{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
 }
 .banner h1{
-    font-size: 40px;
+    font-size: 48px;
 
 }
 .banner h1 span{
-    color: var(--orange);
+    color: var(--blue);
 }
 .banner h2{
     color: white;
@@ -374,6 +378,17 @@ section {
     margin-bottom: 0;
     overflow: hidden;
 }
+.composition .section_title{
+    text-align: center;
+    margin: 40px 0 -30px;
+    font-size: 38px;
+}
+.composition .section_title span{
+    background: rgba(255,255,255, 0.8);
+    border-radius: 12px;
+    padding: 12px 24px;
+    color: var(--blue);
+}
 .composition_wrapper{
     position: relative;
     display: flex;
@@ -429,6 +444,85 @@ section {
 .parallax-mirror{
     filter: brightness(.8);
 }
+
+
+
+
+
+/* FACTORY */
+.factory{
+    overflow: hidden;
+}
+.factory_wrapper{
+    display: flex;
+    margin-top: 40px;
+}
+.factory_img{
+    width: 40%;
+    border-radius: 16px;
+    padding-right: 32px;
+}
+.factory_img img{
+    border-radius: 16px;
+    width: 100%;
+}
+.factory_text{
+    width: 60%;
+    padding: 16px;
+}
+.factory_text p{
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+/* HEALTHY */
+.healthy{
+    overflow: hidden;
+}
+.healthy_wrapper{
+    display: flex;
+    margin-top: 40px;
+}
+.healthy_img{
+    width: 40%;
+    border-radius: 16px;
+    padding-right: 32px;
+}
+.healthy_img img{
+    border-radius: 16px;
+    width: 80%;
+}
+.healthy_text{
+    width: 60%;
+    padding: 16px 16px 16px 0;
+}
+.healthy_text p{
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 16px;
+}
+.healthy_text p b{
+    color: var(--blue);
+}
+.healthy_text ul {
+    padding-left: 20px;
+}
+.healthy_text ul li{
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.healthy_text ul li::marker{
+    color: var(--blue);
+}
+
+
+
 
 
 /* FOOTER */
@@ -572,7 +666,9 @@ footer{
 
 
 /* CONTACTS */
-
+.contacts{
+    overflow: hidden;
+}
 .contacts_wrapper{
     display: flex;
     align-items: center;
