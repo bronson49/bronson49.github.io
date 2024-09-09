@@ -186,7 +186,7 @@ section {
     color: white;
 }
 .banner h1{
-    font-size: 48px;
+    font-size: 88px;
 
 }
 .banner h1 span{
@@ -535,7 +535,7 @@ section {
 /* FOOTER */
 
 footer{
-    background: #363946;
+    background: #1b1c21;
     color: white;
     padding: 64px 0;
 }
@@ -561,6 +561,10 @@ footer{
     font-weight: 500;
     display: block;
     margin-bottom: 25px;
+}
+.footer_container .col p {
+    margin-top: 32px;
+    color: #c1c1c1;
 }
 
 
