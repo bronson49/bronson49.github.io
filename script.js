@@ -2,6 +2,7 @@ function initAboutSlider() {
     $('.about_carousel').slick({});
 }
 function setHeaderColor(){
+    if(!document.getElementById('about')) return;
     const aboutTop = $('#about').offset().top;
     const $header = $('header');
 
@@ -71,82 +72,18 @@ function submitForm(){
         },
     });
 }
-
-class FlyIco {
-    constructor(options) {
-        this.path = options.path;
-        this.timeToDelete = options.timeToDelete;
-        this.wrapper = options.wrapper;
-    }
-    start(){
-        this.createImg();
-        this.addImg();
-        setTimeout(()=>{
-            this.deleteImg();
-        }, this.timeToDelete)
-    }
-    createImg(){
-        const img = document.createElement('IMG');
-        img.src = this.path;
-        img.classList.add('ico');
-        $(img).css({
-            'transition': this.timeToDelete + 'ms linear',
-            'left': random(5, 95) + '%'
-        });
-        this.img = img;
-    }
-    addImg(){
-        $(this.wrapper).append(this.img);
-        setTimeout(()=>{
-            $(this.img).css({ 'top': '0' });
-        },50)
-    }
-    deleteImg(){
-        $(this.img).remove();
-    }
-}
-function random(min, max) {
-    return Math.random() * (max - min) + min;
-}
-function bannerAnimations(){
-    new FlyIco({
-        path:'./img/ico.png',
-        timeToDelete: random(12000, 25000),
-        wrapper: '#start',
-    }).start()
-    setInterval(()=>{
-        new FlyIco({
-            path:'./img/ico.png',
-            timeToDelete: random(12000, 25000),
-            wrapper: '#start',
-        }).start()
-    }, random(2000, 5000))
+function mobMenuTrigger(){
+    $('.menu_btn').click(function (){
+        $(this).toggleClass('active');
+        $('header nav').toggleClass('active');
+    });
+    $('header nav a').click(function (){
+        $('.menu_btn').removeClass('active')
+        $('header nav').removeClass('active')
+    })
 }
 
-function createBubble() {
-    const bubblesContainer = document.getElementById("start");
-    const bubble = document.createElement("div");
-    bubble.className = "bubble";
 
-    bubble.style.left = random(5, 95) + '%';
-
-    const size = Math.floor(random(20, 40));
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-
-    const animationDuration = Math.floor(random(10, 25));
-    bubble.style.animationDuration = `${animationDuration}s`;
-
-    bubblesContainer.appendChild(bubble);
-
-    setTimeout(()=>{
-        $(bubble).remove();
-    }, animationDuration*1000)
-    /*bubble.addEventListener("animationend", () => {
-        console.log('animationend')
-        bubble.remove();
-    });*/
-}
 
 $(document).ready(function(){
     initAboutSlider();
@@ -154,6 +91,5 @@ $(document).ready(function(){
     createParallax();
     openCallbackForm();
     formValidation();
-   // bannerAnimations();
-   // setInterval(createBubble, random(500, 1500));
+    mobMenuTrigger();
 });
