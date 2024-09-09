@@ -82,10 +82,23 @@ function mobMenuTrigger(){
         $('header nav').removeClass('active')
     })
 }
-
+function initMobileBannerBackground(){
+    const isMobile = window.innerWidth < 1280
+    if(isMobile){
+        const img = document.querySelector('img.banner_video');
+        img.src = img.dataset.src
+    } else {
+        const video = document.querySelector('video.banner_video');
+        const source = document.createElement('SOURCE');
+        source.type = "video/mp4"
+        source.src = "./img/water_bg1.mp4"
+        video.appendChild(source)
+    }
+}
 
 
 $(document).ready(function(){
+    initMobileBannerBackground();
     initAboutSlider();
     setHeaderColor();
     createParallax();
